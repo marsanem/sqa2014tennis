@@ -4,32 +4,30 @@ import app.match as m
 
 
 @step(u'Given: "([^"]*)" and "([^"]*)" start a match to "([^"]*)" sets')
-def given_group1_and_group2_start_a_match_to_group3_sets(step, group1, group2, group3):
-    world.match = m.Match(group1,group2,group3)
+def given_p1_and_p2_start_a_match_to_pacted_sets(step, p1, p2, sets):
+    world.match = m.Match(p1, p2, sets)
 
 
-@step(u'When: "([^"]*)" and "([^"]*)" start a match to "([^"]*)" sets')
-def when_group1_and_group2_start_a_match_to_group3_sets(step, group1, group2, group3):
-    assert False, 'This step must be implemented'
+@step(u'Given: "([^"]*)" and "([^"]*)" start a match to "([^"]*)" sets')
+def given_p1_and_p2_start_a_match_to_pacted_sets(step, p1, p2, sets):
+    world.match = m.Match(p1, p2, sets)
 
 
 @step(u'Then: I see score: "([^"]*)"')
-def then_i_see_score_group1(step, group1):
-    assert False, 'This step must be implemented'
+def then_i_see_score(step, score):
+    assert world.match.score() == score, "Got %s" % world.match.score()
 
 
 @step(u'When: "([^"]*)" won the "([^"]*)" set "([^"]*)"-"([^"]*)"')
-def when_group1_won_the_group2_set_group3_group4(step, group1, group2, group3, group4):
-    assert False, 'This step must be implemented'
+def when_player_won_the_set_num(step, p1, set_num, num1, num2):
+    world.match.add(p1, int(set_num[0]), num1, num2)
 
 
 @step(u'And: "([^"]*)" won the "([^"]*)" set "([^"]*)"-"([^"]*)"')
-def and_group1_won_the_group2_set_group3_group4(step, group1, group2, group3, group4):
-    assert False, 'This step must be implemented'
+def and_player_won_the_set_num(step, p1, set_num, num1, num2):
+    world.match.add(p1, int(set_num[0]), num1, num2)
 
 
 @step(u'Then: The match score is: "([^"]*)"')
-def then_the_match_score_is_group1(step, group1):
-    assert False, 'This step must be implemented'
-
-
+def then_the_match_score_is_p1(step, score):
+    assert world.match.score() == score, "Got %s" % world.match.score()
