@@ -14,11 +14,11 @@ class Match:
         if self.contp1 == 0 and self.contp2 == 0:
             return "{0} plays with {1} | 0-0".format(self.p1, self.p2)
         elif self.contp1 > self.contp2:
-            return "{0} defeated {1} | {2}".format(self.p1, \
-                                                   self.p2, self.getpoints(self.p1))
+            return "{0} defeated {1} | {2}".format(self.p1,
+                                    self.p2, self.getpoints(self.p1))
         else:
-            return "{0} defeated {1} | {2}".format(self.p2, \
-                                                   self.p1, self.getpoints(self.p2))
+            return "{0} defeated {1} | {2}".format(self.p2,
+                                    self.p1, self.getpoints(self.p2))
 
     def add(self, player, set_num, num1, num2):
         if player == self.p1:
