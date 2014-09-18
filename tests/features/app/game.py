@@ -26,15 +26,18 @@ Cuando el otro jugador le empata
 ['deuce', 'deuce']
 
 Cuando estan empatados y uno obtiene la ventaja
->>> Game().scores(1).scores(1).scores(1).scores(2).scores(2).scores(2).scores(1).score()
+>>> Game().scores(1).scores(1).scores(1).scores(2)
+>>> Game().scores(2).scores(2).scores(1).score()
 ['ads', '']
 
 Cuando después de tener la ventaja vuelven a empatar
->>> Game().scores(1).scores(1).scores(1).scores(2).scores(2).scores(2).scores(1).scores(2).score()
+>>> Game().scores(1).scores(1).scores(1).scores(2).scores(2).scores(2)
+>>> Game().scores(1).scores(2).score()
 ['deuce', 'deuce']
 
 Cuando obtiene la ventaja y además anota otro punto
->>> Game().scores(1).scores(1).scores(1).scores(2).scores(2).scores(2).scores(1).scores(1).score()
+>>> Game().scores(1).scores(1).scores(1).scores(2).scores(2).scores(2)
+>>> Game().scores(1).scores(1).score()
 ['wins!', 'loses']
 
 

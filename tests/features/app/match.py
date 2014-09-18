@@ -17,7 +17,7 @@ class Match:
             return "{0} defeated {1} | {2}".format(self.p1, self.p2, self.getpoints(self.p1))
         else:
             return "{0} defeated {1} | {2}".format(self.p2, self.p1, self.getpoints(self.p2))
-        
+
     def add(self, player, set_num, num1, num2):
         if player == self.p1:
             self.contp1 += 1
@@ -27,7 +27,7 @@ class Match:
             self.contp2 += 1
             self.scorep1[set_num - 1] = num2
             self.scorep2[set_num - 1] = num1
-        
+
     def getpoints(self, player):
         points = ""
         i = 0
